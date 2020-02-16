@@ -3,4 +3,4 @@ Exploring Github
 Hello World!
 
 Here, I am exploring Github. :-)
-<em><h1> Be happy!</h1></em>
+<i><h1> Be happy!</h1></i>
