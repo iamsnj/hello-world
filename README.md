@@ -1,4 +1,4 @@
-# hello-world
+# Learning
 Exploring Github
 Hello World!
 
