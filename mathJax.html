@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Test</title>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ]
+            }
+        };
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id='Data'></div>
+    <script>
+        fetch('http://ravigitte.pythonanywhere.com/solve/?exp=integrate(2*x%20+%20y,x)')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                appendData(data);
+            })
+            .catch(function(err) {
+                console.log('error: ' + err);
+            });
+
+        function appendData(data) {
+            var mainContainer = document.getElementById("Data");
+            var div = document.createElement("div");
+            div.innerHTML = data[0].input + ' ' + data[0].num_variables + ' ' + data[0].output + ' ' + data[0].title + ' ' +
+                data[0].variable + ' ' + data[0].variables[0];
+            for (var i = 1; i < 3; i++) {
+                data[i].value = data[i].value.replace(/\\\\/g, '\\');
+                div.innerHTML += data[i].output + ' ' + data[i].title + ' ' + data[i].value.replace(/\\n/g, '\n');
+            }
+            div.innerHTML += data[3].card + ' ' + data[3].input + ' ' + ' ' + data[3].parameters + ' ' + data[3].pre_output + ' ' +
+                data[3].title + ' ' + data[3].var;
+            for (var i = 4; i < 8; i++) {
+                data[i].value = data[i].value.replace(/\\\\/g, '\\');
+                div.innerHTML += data[i].output + ' ' + data[i].title + ' ' + data[i].value.replace(/\\n/g, '\n');
+            }
+            mainContainer.appendChild(div);
+        }
+    </script>
+
+</body>
+
+</html>
