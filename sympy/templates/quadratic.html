@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ]
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <p><b>NOTE: </b> Cost function should be in format x**2 + 3*x + 2 for
+        <script type='math/tex; mode=display'>{x^2+3x+2}</script>
+    </p>
+    <hr>
+    <form action='/quadratic/' , method='POST'>
+        <p>Assume that an entrepreneur's short-run total cost function is C =
+            <input type="text" name="equation" value="{{ request.form['equation'] }}" required><br><br> Determine the output level at which he maximizes profit if p =
+            <input type="text" name='profit' value="{{ request.form['profit'] }}" required><br><br> Compute the output elasticity of cost at this output.<br><br>
+            <input type="submit" value="Send">
+        </p>
+        {% block content %}{% endblock %}
+
+    </form>
+</body>
+
+</html>
