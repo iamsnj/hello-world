@@ -1,0 +1,22 @@
+{% extends 'quadratic.html' %} {% block content %}
+<h3><u>Answer</u>:</h3>
+<p align='justify' style="padding: 10px;">The firm produces at MC = P to maximize profit
+    <br><br> MC = marginal cost and P = price
+    <br><br> Compute the output MC is a change in the total cost and a change in a function is found by the first differentiation
+    <br><br>
+    <script type="math/tex; mode=display"> MC = \frac{dC}{dq} = \frac{d({{equation}})}{dq} = {{diff}}</script><br>
+    <script type="math/tex; mode=display">MC = {{diff}}</script>
+    <br><br>equating to P<br><br>
+    <script type="math/tex; mode=display">{{diff}} = {{P}} \\ {{expr}} = 0 \\ {{expr1}} = 0 \\ x = {{factor0}} \hspace{0.5cm} or \hspace{0.5cm} x = {{factor1}}</script>
+    <br><br>q>0, the profit is maximum at highest q as MC is increasing
+    <br><br>
+    <script type="math/tex; mode=display">q = {{factor1}}</script> then MC is increasing and
+    <script type="math/tex; mode=display">q = {{factor0}}</script> then MC is decreasing so the profit is maximum at so the profit is maximum at
+    <script type="math/tex; mode=display">q = {{factor1}}</script> units
+    <br><br>===
+    <br><br>Output elasticity formula is:<br><br>
+    <script type="math/tex; mode=display">\frac{C}{q}*\frac{dq}{dC}=\frac{ {{equation}} }{q}*\frac{1}{ {{diff}} } \\ Put \hspace{0.5cm}q = {{factor1}},
+    </script>
+    <script type="math/tex; mode=display">= \frac{ {{eq_val}} }{ {{factor1}} }*\frac{1}{ {{deri_val}} } \\ = {{ans}} \\ output \hspace{0.5cm} elasticity = {{factor1}}</script>
+</p>
+{% endblock %}
